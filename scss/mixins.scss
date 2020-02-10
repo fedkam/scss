@@ -1,0 +1,33 @@
+
+@mixin grid($cols, $margin){
+  float: left;
+  background: red;
+  margin-right: $margin;
+  margin-bottom: $margin;
+  height: 100px;
+  width: ((100% - (($cols - 1) * $margin)) / $cols);
+
+  &:nth-child(#{$cols}n) {
+    margin-right: 0;
+  }
+}
+
+@mixin font($fontW:bold, $colors:red) {
+  font-size: $mailFontSize;
+  font-weight: $fontW;
+  font-family: Arial, sans-serif;
+  color: $colors;
+}
+
+@mixin link($link, $colorHover, $colorActive, $colorVisited){
+  color: $link;
+  &:hover {
+    color: $colorHover
+  }
+  &:active {
+    color: $colorActive
+  }
+  &:visited {
+    color: $colorVisited
+  }
+}
